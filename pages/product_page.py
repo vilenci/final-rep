@@ -21,4 +21,11 @@ class ProductPage(BasePage):
         price_of_good_in_the_cart = self.browser.find_element(*ProductPageLocators.PRICE_OF_GOOD_IN_THE_CART).text        
         assert price_of_good == price_of_good_in_the_cart, "Price of good does not match"
         
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGE), \
+        "Success message is presented, but should not be"
+       
+    def should_be_disapeared(self):
+        assert self.is_disappeared(*ProductPageLocators.DISAPPEARED_ELEMENT), \
+        "Element is not disappeared"
     
