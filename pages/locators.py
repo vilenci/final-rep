@@ -3,10 +3,12 @@ from selenium.webdriver.common.by import By
 class BasePageLocators(object):
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
     LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
+    CART_LINK = (By.CSS_SELECTOR, "div.basket-mini > span > a")
     
 class LoginPageLocators(object):
     LOGIN_FORM = (By.CSS_SELECTOR, "#login_form")
     REGISTER_FORM = (By.CSS_SELECTOR, "#register_form")
+    
     
 class ProductPageLocators(object):
     BUTTON_ADD_TO_CART = (By.CSS_SELECTOR, "#add_to_basket_form > button")
@@ -16,3 +18,7 @@ class ProductPageLocators(object):
     PRICE_OF_GOOD_IN_THE_CART = (By.CSS_SELECTOR, "div.alert-info > div strong")
     SUCCESS_MESSAGE = (By.CSS_SELECTOR, "#messages > div:nth-child(1) > div")
     DISAPPEARED_ELEMENT = (By.CSS_SELECTOR, "#messages > div:nth-child(1) > div")
+    
+class CartPageLocators(object):
+    CART_IS_EMPTY = (By.CSS_SELECTOR, "#content_inner > p")
+    ITEM_IN_THE_CART = (By.CSS_SELECTOR, ".basket-items")
